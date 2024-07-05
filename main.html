@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Battle Simulator V1</title>
+</head>
+<style>
+body {
+    font-family: 'Uncial Antiqua', cursive;
+    font-style: normal;
+    background: url('https://www.transparenttextures.com/patterns/aged-paper.png'); 
+    background-color: #f4e4c1; 
+    color: #333; 
+    padding: 20px;
+
+}
+
+.log {
+    margin: 10px 0;
+}
+
+
+.quote-container {
+    background: url('https://www.transparenttextures.com/patterns/aged-paper.png'); 
+    background-color: #f4e4c1; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border: 2px solid #c49b66; 
+    color: #333; 
+}  
+
+.quote {
+    font-size: 1.2em; 
+    margin-bottom: 20px;
+    font-style: italic;
+    font-family: 'Uncial Antiqua', cursive; 
+    color: #3e2723; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+
+ .author {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+.headline {
+    font-size: 2.5em; 
+    font-family: 'Uncial Antiqua', cursive; 
+    color: #5d4037; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    margin-bottom: 20px;
+    text-align: center; 
+    letter-spacing: 1px; 
+}
+
+.absoluteContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.walka-log-container{
+    margin-bottom: 5px;
+    width: 50%;
+    max-height: 300px;
+    overflow-y: auto;
+    background: url('https://www.transparenttextures.com/patterns/paper.png'); 
+    background-color: #f4e4c1; 
+    padding: 120px;
+    border: 2px solid #c49b66; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-top: 10px;
+    color: #333; 
+}
+
+
+/*{
+    margin-bottom: 20px;
+  
+    width: 50%;
+    max-height: 300px;
+    overflow-y: auto;
+    background: url('https://www.transparenttextures.com/patterns/paper.png'); 
+    background-color: #f4e4c1; 
+    padding: 10px;
+    border: 2px solid #c49b66; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-top: 20px;
+    color: #333; 
+    
+}  */
+
+.walka-log {
+    font-size: 1em; 
+    width: 100%;
+    font-family: 'Uncial Antiqua', cursive;
+    font-variant: normal; 
+    font-stretch: normal; 
+    background-color: #d8c3a5; 
+    padding: 20px;
+    margin-bottom: 2px; 
+    border-radius: 5px; 
+    color: #3e2723; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+/*{
+    font-size: 1em; 
+    width: 100%;
+    font-family: 'Uncial Antiqua', cursive;
+    font-variant: normal; 
+    font-stretch: normal; 
+    background-color: #d8c3a5; 
+    padding: 5px;
+    margin-bottom: 5px; 
+    border-radius: 5px; 
+    color: #3e2723; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}  */
+
+
+.BattleLog1 {
+    background-color: #5f3623; 
+    color: #f5deb3; 
+    font-family: 'Uncial Antiqua', cursive; 
+    font-style: italic;
+    font-size: 1.2em; 
+    border-bottom: 2px solid #ffe4c4; 
+    margin: 20px; 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+
+.Player1Card, .Player2Card 
+{
+    overflow-y: auto;
+    background: url('https://www.transparenttextures.com/patterns/paper.png'); 
+    width: 40%;
+    max-height: 500px; 
+    padding: 100px;
+    border: 1px solid #c49b66; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    color: #333; 
+    margin-top: 1px;
+}
+
+
+
+
+
+/*.Player1Card {
+    
+    overflow-y: auto;
+    background: url('https://www.transparenttextures.com/patterns/paper.png'); 
+    width:15%;
+    float: left;
+
+}
+
+.Player2Card {
+
+    overflow-y: auto;
+    background: url('https://www.transparenttextures.com/patterns/paper.png'); 
+    width:20%;
+    float: right;
+
+}  */
+
+
+</style>
+<body>
+    <center>
+    <h1 class="headline" id="headline"> Fantasy Battle Simulator</h1>
+   
+
+
+
+
+<!quote generator>
+
+   
+   </style>
+
+<div class="quote-container" style="margin-bottom:45px; width:100%;">
+    <div class="quote" id="quote"></div>
+    <div class="author" id="author"></div>
+</div>
+
+
+
+
+
+<script>
+    const quotes = [
+            { text: "It is better to conquer yourself than to win a thousand battles. Then the victory is yours. It cannot be taken from you, not by angels or by demons, heaven or hell.", author: "Buddha" },
+            { text: "Some of the greatest battles will be fought within the silent chambers of your own soul.", author: "Ezra Taft Benson" },
+            { text: "Never interrupt your enemy when he is making a mistake.", author: "Napoleon Bonaparte" },
+            { text: "If you wish to be a success in the world, promise everything, deliver nothing.", author: "Napoleon Bonaparte" },
+            { text: "Impossible is a word to be found only in the dictionary of fools.", author: "Napoleon Bonaparte" },
+            { text: "Victory belongs to the most persevering.", author: "Napoleon Bonaparte" },
+            { text: "The battlefield is a scene of constant chaos. The winner will be the one who controls that chaos, both his own and the enemies.", author: "Napoleon Bonaparte" }
+        ];
+
+        function getRandomInt(min,max){
+            return Math.floor(Math.random() *( max - min + 1)+1);
+        }
+
+
+        function displayRandomQuote(){
+        const randomIndex = getRandomInt(0, quotes.length -1);
+        const quote = quotes[randomIndex];
+        document.getElementById('quote').textContent = `"${quote.text}"`;
+        document.getElementById('author').textContent = `"${quote.author}"`;
+         }
+
+        window.onload = displayRandomQuote;
+</script>
+
+    <!button starting sequence of battle>
+
+    <button id="startButton" class="startButton" onclick="simulateBattle(player1, player2)">START BATTLE</button>
+    
+
+
+    <!battle log fight>
+
+    <div id="BattleLog1" class="BattleLog1">
+        <thead>
+        <tr>
+            <th>Battle Log Fight</th>
+        </tr>
+    </thead>
+    </div>
+    </center>
+    
+    
+
+
+
+
+    
+<div id="absoluteContainer" class="absoluteContainer">
+
+
+
+    <left>
+    <div class="Player1Card" id="Player1Card" script src="index.js">
+    
+
+    </div>
+    </left>
+
+
+
+    <center>
+
+
+
+    
+    <div id="walka-log-container" class="walka-log-container">
+    <div id="walka-log" class="walka-log">
+</div>
+    </div>
+    </center>
+    
+
+
+      
+
+
+
+        <right>
+            <div class="Player2Card" id="Player2Card" script src="index.js">
+            
+    
+            </div>
+        </right>
+    
+
+
+    </div>
+
+<script src="index.js">
+
+
+
+</script>
+
+
+
+
+
+
+<h14>Author: Maciej Bardo</h14>
+
+</body>
+</html>
